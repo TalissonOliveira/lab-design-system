@@ -2,7 +2,7 @@ name: Deploy Storybook
 
 on:
   push:
-    branch:
+    branches:
       - main
 
 jobs:
@@ -17,8 +17,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+          cache: 'yarn'
 
-        - name: Install dependencies
+      - name: Install dependencies
         run: |
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile --legacy-peer-deps
