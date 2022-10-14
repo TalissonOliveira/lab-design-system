@@ -5,10 +5,11 @@ import { clsx } from 'clsx'
 export interface HeadingProps {
   size?: 'sm' | 'md' | 'lg',
   asChild?: boolean
+  className?: string
   children: ReactNode
 }
 
-export function Heading({ size = 'md', asChild, children }: HeadingProps) {
+export function Heading({ size = 'md', asChild, className, children }: HeadingProps) {
   const Comp = asChild ? Slot : 'h2'
 
   return (
@@ -17,7 +18,8 @@ export function Heading({ size = 'md', asChild, children }: HeadingProps) {
         'text-lg': size === 'sm',
         'text-xl': size === 'md',
         'text-2xl': size === 'lg'
-      }
+      },
+      className
     )}>
       {children}
     </Comp>
