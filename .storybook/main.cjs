@@ -17,6 +17,9 @@ module.exports = {
     "storyStoreV7": true,
     "interactionsDebugger": true
   },
+  "statichDirs": [
+    "../public"
+  ],
   viteFinal: (config, { configType }) => {
     if (configType === 'PRODUCTION') {
       config.base = '/lab-design-system/'
